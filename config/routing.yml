@@ -1,0 +1,9 @@
+
+#sf_guard_log:
+#  class: sfDoctrineRouteCollection
+#  options:
+#    model:                sfGuardLog
+#    module:               sfGuardLog
+#    prefix_path:          /sfGuardLog
+#    column:               id
+#    with_wildcard_routes: true

@@ -1,0 +1,29 @@
+
+sfGuardLog:
+  actAs:
+    Timestampable:
+      updated:
+        disabled: true
+  columns:
+    user_id:        { type: integer }
+    url:            { type: string(500), notnull: true }
+    application:    { type: string(255), notnull: true }
+    module:         { type: string(255), notnull: true }
+    action:         { type: string(255), notnull: true }
+    method:         { type: string(15), notnull: true }
+    status_code:    { type: integer }
+    params:         { type: string }
+
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      type: one
+      foreignType: many
+      autoComplete: false
+
+  options:
+    charset: utf8
+    symfony:
+      form: false

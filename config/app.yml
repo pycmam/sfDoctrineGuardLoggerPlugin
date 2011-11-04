@@ -1,0 +1,6 @@
+
+#all:
+#  sf_guard_logger:
+#    enabled: true
+#    methods: [post, put, delete]
+#    keywords: [delete, update, remove, save]
