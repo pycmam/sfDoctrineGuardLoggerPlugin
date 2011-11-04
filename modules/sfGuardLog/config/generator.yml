@@ -12,11 +12,29 @@ generator:
     actions_base_class:    sfActions
 
     config:
-      actions: ~
-      fields:  ~
+      actions: {}
+      fields:
+        user: { label: Пользователь }
+        User: { label: Пользователь }
+        module: { label: Модуль }
+        action: { label: Контроллер }
+        application: { label: Приложение }
+        method: { label: Метод }
+        status_code: { label: HTTP-статус }
+        params: { label: Параметры запроса }
+        url: { label: URL }
+        created_at: { label: 'Дата, время', date_format: 'dd.MM.yy HH:mm:ss' }
       list:
-        display:           [created_at, module, action, url, status_code]
-      filter:  ~
+        title: История действий пользователей <a href="#" onclick="jQuery('#sf_admin_bar').slideToggle('slow')">(поиск)</a>
+        display: [created_at, User, module, action, method, url, status_code]
+        sort: [id, desc]
+        max_per_page: 100
+        object_actions: {}
+        batch_actions: {}
+        actions: {}
+
+      filter:
+        display: [application, module, action, created_at]
       form:    ~
       edit:    ~
       new:     ~
